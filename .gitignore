@@ -1,0 +1,93 @@
+###############
+## .NET Core ##
+###############
+
+# Compiled binary folders
+bin/
+obj/
+out/
+
+# Build results
+*.dll
+*.exe
+*.pdb
+*.app
+*.so
+*.dylib
+*.nupkg
+*.snupkg
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.cache
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+
+# Visual Studio folders
+.vs/
+.vscode/
+.idea/
+
+# ASP.NET Core environment settings
+appsettings.*.json
+secrets.json
+*.db
+*.mdf
+*.ldf
+
+# EF Core tools
+Migrations/
+
+# Rider
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Dotnet-specific
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.deps.json
+*.runtimeconfig.json
+*.runtimeconfig.dev.json
+*.csproj.user
+
+# NPM/Yarn/PNPM
+node_modules/
+dist/
+.env
+.env.*
+
+# Test results
+TestResults/
+*.coverage
+*.coveragexml
+
+# Global packages
+packages/
+.nuget/
+
+# Local NuGet cache
+*.nupkg
+*.snupkg
+
+# Docker
+docker-compose.override.yml
+*.dockerfile
+**/Dockerfile.*
+
+# Publish output
+publish/
+wwwroot/
