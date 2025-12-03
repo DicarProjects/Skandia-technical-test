@@ -1,0 +1,1 @@
+# Skandia-technical-test
