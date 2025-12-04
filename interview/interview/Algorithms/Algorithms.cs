@@ -35,10 +35,11 @@ namespace interview.Algorithms
         {
             string result = string.Empty;
 
-            foreach (var rule in DivisibilityRules) {
+            foreach (var rule in DivisibilityRules)
+            {
 
-                if (number % rule.Divisor == 0) 
-                { 
+                if (number % rule.Divisor == 0)
+                {
                     result += rule.Word;
                 }
             }
@@ -72,7 +73,7 @@ namespace interview.Algorithms
             return (true, new List<int>());
         }
 
-        private static List<int> GeneratePrimes(int count) 
+        private static List<int> GeneratePrimes(int count)
         {
             var primes = new List<int> { 2 };
             int currentNumber = 3;
@@ -101,5 +102,54 @@ namespace interview.Algorithms
         }
 
         //3. Cadena de Texto inversa
+        public static string GetReversedSentence(string sentence)
+        {
+            if (string.IsNullOrEmpty(sentence))
+                return string.Empty;
+
+            var words = ExtractWords(sentence);
+
+            if (words.Count == 0) return string.Empty;
+            return JoinReversedWords(words);
+        }
+
+        private static List<string> ExtractWords(string sentence)
+        {
+            var words = new List<string>();
+
+            for (int i = 0; i < sentence.Length;)
+            {
+                if (sentence[i] == ' ')
+                {
+                    i++;
+                    continue;
+                }
+
+                int start = i;
+
+                while (i < sentence.Length && sentence[i] != ' ')
+                {
+                    i++;
+                }
+
+                int length = i - start;
+                words.Add(sentence.Substring(start, length));
+            }
+
+            return words;
+        }
+
+        private static string JoinReversedWords(List<string> words)
+        {
+            var sb = new System.Text.StringBuilder();
+            for (int w = words.Count - 1; w >= 0; w--)
+            {
+                sb.Append(words[w]);
+                if (w > 0) sb.Append(' ');
+            }
+
+            return sb.ToString();
+        }
+
     }
 }
