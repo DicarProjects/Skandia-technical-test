@@ -12,13 +12,13 @@ namespace interview.Algorithms
 
         //1. Imprimir números 1 - 100 con validaciones;
 
-        public readonly List<(int Divisor, string Word)> DivisibilityRules = new List<(int, string)>
+        public static readonly List<(int Divisor, string Word)> DivisibilityRules = new List<(int, string)>
         {
             (3, "Bin"),
             (5, "Go")
         };
 
-        public List<string> ReturnNumbers()
+        public static List<string> ReturnNumbers()
         {
             List<string> numbers = new List<string>();
 
@@ -31,8 +31,7 @@ namespace interview.Algorithms
         }
 
 
-
-        private string ValidateDivisibility(int number)
+        private static string ValidateDivisibility(int number)
         {
             string result = string.Empty;
 
@@ -53,6 +52,53 @@ namespace interview.Algorithms
         }
 
         //2. Imprimir los primeros 50 números primos
+
+        private const int DefaultCount = 50;
+
+        public static List<int> GetPrimesNumbers(int count = DefaultCount)
+        {
+            var (isValidationNeeded, validationResult) = RunBasicValidations(count);
+
+            if (!isValidationNeeded) return validationResult;
+
+            return GeneratePrimes(count);
+        }
+
+        private static (bool countValid, List<int> result) RunBasicValidations(int count)
+        {
+            if (count <= 0) return (false, new List<int>());
+            if (count == 1) return (false, new List<int> { 2 });
+
+            return (true, new List<int>());
+        }
+
+        private static List<int> GeneratePrimes(int count) 
+        {
+            var primes = new List<int> { 2 };
+            int currentNumber = 3;
+
+            while (primes.Count < DefaultCount)
+            {
+                bool isPrime = true;
+                int limit = (int)Math.Sqrt(currentNumber);
+
+
+                foreach (var p in primes)
+                {
+                    if (p > limit) break;
+                    if (currentNumber % p == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+
+                if (isPrime) primes.Add(currentNumber);
+                currentNumber += 2;
+            }
+
+            return primes;
+        }
 
         //3. Cadena de Texto inversa
     }
