@@ -6,6 +6,7 @@ Este repositorio contiene la solución completa a la prueba técnica.
 La solución está organizada en tres módulos principales, cada uno en una carpeta independiente.
 La aplicación principal es una aplicación de consola, desde la cual se ejecutan los algoritmos y se centralizan las demostraciones de la prueba.
 
+```
 📁 Estructura del Repositorio
 /
 │── Basic Concepts/
@@ -13,6 +14,8 @@ La aplicación principal es una aplicación de consola, desde la cual se ejecuta
 │── Data Models/
 │── Program.cs
 │── README.md
+```
+
 
 1️⃣ Basic Concepts
 
@@ -76,9 +79,3 @@ Diagrama entidad–relación del modelo relacional.
 ✔ Consultas solicitadas
 
   Nombre del Archivo: Validate ACME Model.sql
-
-
-
-Cuando subas la imagen, usa la siguiente referencia en Markdown:
-
-![ERD](DataModels/erd.png)
